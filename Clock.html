@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Clock#</title>
+    <style type="text/css">
+        body {
+            display: flex;
+            justify-content: center;
+            background: black;
+            min-height: 100vh;
+        }
+
+        #clock h2 {
+            position: relative;
+            display: block;
+            color: white;
+            text-align: center;
+            margin: 100px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.4em;
+            font-size: 0.8em;
+        }
+
+        #clock #time {
+            display: flex;
+        }
+
+        #clock #time div {
+            position: relative;
+
+            margin: 0 5px;
+            -webkit-box-reflect: below 1px linear-gradient(transparent, #0004);
+        }
+
+        #clock #time div span {
+            position: relative;
+            display: block;
+            /*width: 200px;
+height: 88px;*/
+            background: #2196f3;
+            color: #fff;
+            font-weight: 300;
+            display: flex;
+            justify-content: center;
+            font-size: 3em;
+            z-index: 10;
+            box-shadow: 0 0 0 1px rgba(0, 0, 0, .2);
+        }
+
+        
+#clock #time div span: nth-child {
+height: 30px;
+font-size: 0.7em;
+letter-spacing: 0.2em;
+font-weight: 500;
+z-index: 9;
+box-shadow: none;
+background: #127fd6;
+text-transform: uppercase;
+
+}
+
+#clock #time div:last-child span{
+background: red;
+}
+
+#clock #time div:last-child span:nth-child(2){
+background: #ec0062;
+}
+
+    </style>
+</head>
+
+<body>
+    <div id="clock">
+        <h2>The Time</h2>
+        <div id="time">
+            <div>
+                <span id="hours">00</span><span>Hours</span>
+            </div>
+
+            <div>
+                <span id="minutes">00</span><span>Minutes</span>
+
+            </div>
+
+            <div>
+                <span id="second">00</span><span>Second</span>
+
+            </div>
+        </div>
+    </div>
+
+    <script src="jquery.min.js"></script>
+    <script>
+        function clock()
+
+        {
+
+            var hours = document.getElementById('hours');
+
+            var minutes = document.getElementById('minutes');
+
+            var second = document.getElementById('second');
+
+
+
+            var h = new Date().getHours();
+
+            var m = new Date().getMinutes();
+
+            var s = new Date().getSeconds();
+
+
+            hours.innerHTML = h;
+            minutes.innerHTML = m;
+            second.innerHTML = s;
+
+
+
+        }
+
+        let interval = setInterval(function(){
+            clock();
+        },1000);
+
+    </script>
+</body>
+
+</html>
